@@ -5,7 +5,7 @@ from playwright.sync_api import Page, expect, Playwright
 
 def test_playwrigthbasics(playwright):
     browser = playwright.chromium.launch(headless=False)
-    context = browser.new_context() #do some opreations
+    context = browser.new_context() #do some operations
     page = context.new_page()
     page.goto("https://google.com")
 
