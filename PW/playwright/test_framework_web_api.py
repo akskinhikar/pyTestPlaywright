@@ -10,13 +10,11 @@ with open('../data/cred.json') as f:
     user_creds_list = test_data['user_credentials']
 
 @pytest.mark.parametrize('user_creds', user_creds_list)
-def test_e2e_web_api(playwright:Playwright, user_creds):
+def test_e2e_web_api(playwright:Playwright, browser_instance, user_creds):
     global view_index
     user_name = user_creds["user_email"]
     password = user_creds["password"]
-    browser = playwright.chromium.launch(headless=False)
-    context = browser.new_context()
-    page = context.new_page()
+
 
     #Create Order using API
     api_util = APIUtils()
@@ -24,7 +22,7 @@ def test_e2e_web_api(playwright:Playwright, user_creds):
     print(order_no)
 
     #Login
-    login_page = LoginPage(page)
+    login_page = LoginPage(browser_instance)
     login_page.navigate()
     dashboard_page = login_page.login(user_name,password)
 
