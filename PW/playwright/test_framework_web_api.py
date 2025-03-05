@@ -32,9 +32,6 @@ def test_e2e_web_api(playwright:Playwright, browser_instance, user_creds):
     order_details_page.verify_order_message()
 
 
-    context.close()
-
-
 
 
 
