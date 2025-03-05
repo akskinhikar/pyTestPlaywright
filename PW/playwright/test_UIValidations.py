@@ -1,5 +1,4 @@
 from os.path import split
-
 from playwright.sync_api import Page, expect
 
 

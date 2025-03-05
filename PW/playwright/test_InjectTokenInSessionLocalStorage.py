@@ -1,5 +1,5 @@
 from playwright.sync_api import Playwright, expect
-from utils.apiBase import APIUtils
+from PW.utils.apiBase import APIUtils
 
 
 def test_session_storage(playwright:Playwright):

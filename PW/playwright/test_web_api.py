@@ -1,9 +1,5 @@
-import time
-
 from playwright.sync_api import Playwright, expect
-from pytest_playwright.pytest_playwright import browser
-
-from utils.apiBase import APIUtils
+from PW.utils.apiBase import APIUtils
 
 
 def test_e2e_web_api(playwright:Playwright):
